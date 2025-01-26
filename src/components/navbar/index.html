@@ -1,21 +1,43 @@
-<!-- Navbar -->
-<nav class="bg-gray-800 text-white py-4">
-    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <!-- Left Menu (optional) -->
-        <div class="flex items-center space-x-6">
-            <a href="#home" class="hover:text-gray-400">Home</a>
-            <a href="#about" class="hover:text-gray-400">About</a>
+<nav class="bg-white shadow-lg fixed top-0 left-0 w-full z-50">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center h-16">
+       
+        <div class="md:hidden">
+            <button id="menu-btn" class="text-gray-800 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
         </div>
 
-        <!-- Logo (Center) -->
-        <div class="font-bold text-2xl text-center flex-1">
-            <a href="#">My Portfolio</a>
+       
+        <div class="text-2xl font-bold text-purple-600 mx-auto">
+            <a href="#">MyPortfolio</a>
         </div>
 
-        <!-- Right Menu -->
-        <div class="flex items-center space-x-6">
-            <a href="#projects" class="hover:text-gray-400">Projects</a>
-            <a href="#contact" class="hover:text-gray-400">Contact</a>
-        </div>
+        
+        <div class="md:hidden w-8"></div>
     </div>
+
+   
+    <ul id="mobile-menu" class="hidden flex-col bg-white shadow-lg space-y-4 text-gray-800 font-medium px-6 py-4 md:hidden">
+        <li><a href="#hero" class="block hover:text-purple-600">Home</a></li>
+        <li><a href="#about" class="block hover:text-purple-600">About</a></li>
+        <li><a href="#projects" class="block hover:text-purple-600">Projects</a></li>
+        <li><a href="#contact" class="block hover:text-purple-600">Contact</a></li>
+    </ul>
+
+  
+    <ul class="hidden md:flex justify-center space-x-8 text-gray-800 font-medium py-4">
+        <li><a href="#hero" class="hover:text-purple-600">Home</a></li>
+        <li><a href="#about" class="hover:text-purple-600">About</a></li>
+        <li><a href="#projects" class="hover:text-purple-600">Projects</a></li>
+        <li><a href="#contact" class="hover:text-purple-600">Contact</a></li>
+    </ul>
 </nav>
+
+<script>
+    document.getElementById('menu-btn').addEventListener('click', () => {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+    });
+</script>
